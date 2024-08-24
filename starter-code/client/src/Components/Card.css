@@ -1,15 +1,30 @@
 .card__container {
   width: 80%;
-  margin: 0 auto;
+  margin: 5% auto;
   display: grid;
-  /* background-color: transparent; */
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  position: absolute;
+  position: relative;
   top: 200%;
-  left: 10%;
+  right: 0;
+  background-color: var(--color-light-grey);
   z-index: 1;
 }
 .card {
-    background-color: red;
+  background-color: var(--color-white);
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.card img{
+  background-color: red;
+}
+.card__info h3{
+  font-size:20px ;
+}
+
+#location{
+  color: var(--color-violet);
+  margin-top: 40px;
 }

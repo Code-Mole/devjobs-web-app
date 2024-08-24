@@ -51,8 +51,8 @@
   grid-template-columns: 40% 30% 30%;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 80.5%;
+  position: relative;
+  bottom: 30px;
   left: 10%;
   z-index: 10;
 }
