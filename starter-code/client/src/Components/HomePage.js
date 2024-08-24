@@ -1,9 +1,12 @@
 import React from 'react'
 import "./HomePage.css"
+import Heading from "./Heading.js"
 
 function HomePage() {
   return (
-    <div></div>
+    <div className="container">
+        <Heading />
+    </div>
   )
 }
 
