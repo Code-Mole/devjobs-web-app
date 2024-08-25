@@ -17,14 +17,29 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-.card img{
-  background-color: red;
+.card img {
+  /* background-color: red; */
 }
-.card__info h3{
-  font-size:20px ;
+.card__info h3 {
+  font-size: 20px;
 }
 
-#location{
+#location {
   color: var(--color-violet);
   margin-top: 40px;
+}
+
+/* CARDS COMPONENT */
+
+.cards__container button {
+  width: 20%;
+  padding: 15px;
+  margin: 0 auto 10%;
+  background-color: var(--color-violet);
+  color: var(--color-white);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  position: relative;
+  left: 40%;
 }
