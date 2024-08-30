@@ -3,23 +3,23 @@
   margin: 5% auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   position: relative;
   top: 200%;
   right: 0;
   background-color: var(--color-light-grey);
   z-index: 1;
 }
+
 .card {
   background-color: var(--color-white);
   border-radius: 5px;
   padding: 1rem;
+  margin-bottom:2rem ;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-.card img {
-  /* background-color: red; */
-}
+
 .card__info h3 {
   font-size: 20px;
 }
@@ -32,7 +32,7 @@
 /* CARDS COMPONENT */
 
 .cards__container button {
-  width: 20%;
+  width: 55%;
   padding: 15px;
   margin: 0 auto 10%;
   background-color: var(--color-violet);
@@ -41,5 +41,8 @@
   outline: none;
   border-radius: 5px;
   position: relative;
-  left: 40%;
+  left: 100%;
+}
+.cards__container button:hover {
+  background-color: var(--color-light-violet);
 }

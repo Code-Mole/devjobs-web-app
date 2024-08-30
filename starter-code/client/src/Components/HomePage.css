@@ -1,6 +1,0 @@
-.container {
-  width: 100%;
-  background-color: var(--color-light-grey);
-  position: relative;
-  z-index: -10;
-}

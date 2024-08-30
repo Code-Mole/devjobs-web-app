@@ -1,18 +1,17 @@
+import "./Headling.css";
 import React, { useState } from "react";
-import "./Heading.css";
 import logoBg from "../assets/desktop/bg-pattern-header.svg";
 import logo from "../assets/desktop/logo.svg";
 import sun from "../assets/desktop/icon-sun.svg";
 import moon from "../assets/desktop/icon-moon.svg";
 import ToggleOnIcon from "@mui/icons-material/ToggleOn";
 import ToggleOffIcon from "@mui/icons-material/ToggleOff";
-import Search from "./Search.js";
 
-function Heading() {
+function Headling() {
   const [toggle, setToggle] = useState(false);
   return (
-    <>
-      <div className="container">
+    <div>
+      <div className="heading__container">
         <div className="logo">
           <img id="headingBgImg" src={logoBg} alt="bgimage" />
         </div>
@@ -37,9 +36,9 @@ function Heading() {
           </div>
         </div>
       </div>
-      <Search />
-    </>
+     
+    </div>
   );
 }
 
-export default Heading;
+export default Headling;
