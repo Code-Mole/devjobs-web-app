@@ -13,10 +13,9 @@ function Cards() {
         </div>
       ) : (
         <div onClick={() => setclicked(!clicked)}>
-          <Detailpage />
+          <Detailpage id={1} />
         </div>
       )}
-      
     </div>
   );
 }

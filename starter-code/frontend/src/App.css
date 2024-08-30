@@ -12,3 +12,8 @@
   .App{
     background-color: var(--color-light-grey);
   }
+
+  .App__dark__mode{
+    background-color: var(--color-midnight);
+    color: var(--color-white);
+  }
