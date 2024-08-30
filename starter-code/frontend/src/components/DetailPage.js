@@ -14,59 +14,69 @@ function DetailPage(props) {
 
   const selectedItem = item[0];
   return (
-    <div className="detailed__container" >
-      <div className="card">
-      <div className="detailed__container__top">
+    <>
+    <div className="detailed__container">
+      <div className="card__detailed">
+        <div className="detailed__container__top">
+          <div className="detailed__img__container">
+            <img src={selectedItem.logo} alt={selectedItem.company} />
+          </div>
 
-        <img src={selectedItem.logo} alt={selectedItem.company} />
-
-        <div className="logo__info">
-          <h2>{selectedItem.company}</h2>
-         <button>company Site</button>
+          <div className="text__logo">
+            <div>
+              <h3>{selectedItem.company}</h3>
+              <a href={selectedItem.website}>Scoot.com</a>
+            </div>
+            <a href={selectedItem.website}>
+              <button>company Site</button>
+            </a>
+          </div>
         </div>
-      </div>
-      <div className="detailed__container__botton">
+        <div className="detailed__container__botton">
+          <div className="Scoot__text__content">
+            <span>{selectedItem.postedAt} . </span>
+            <span>{selectedItem.contract}</span>
+            <h2>{selectedItem.position}</h2>
+            <p id="location">{selectedItem.location}</p>
+          </div>
+          <a href={selectedItem.apply}>
+            <button>Apply Now</button>
+          </a>
 
-        <div className="text__item1">
-        <span>{selectedItem.postedAt} . </span>
-          <span>{selectedItem.contract}</span>
-          <h3>{selectedItem.position}</h3>
-          <p id="location">{selectedItem.location}</p>
+          <div className="card__info__detailed">
+            <p>{selectedItem.description}</p>
+            <h3>Requirements</h3>
+            <p>{selectedItem.requirements.content}</p>
+            <ul>
+              <li>{selectedItem.requirements.items[0]}</li>
+              <li>{selectedItem.requirements.items[1]}</li>
+              <li>{selectedItem.requirements.items[2]}</li>
+              <li>{selectedItem.requirements.items[3]}</li>
+            </ul>
+            <h3>What you will do</h3>
+            <p>{selectedItem.role.content}</p>
+            <ol>
+              <li>{selectedItem.role.items[0]}</li>
+              <li>{selectedItem.role.items[1]}</li>
+              <li>{selectedItem.role.items[2]}</li>
+              <li>{selectedItem.role.items[3]}</li>
+            </ol>
+          </div>
         </div>
-        <button>Apply Now</button>
-      </div>
-        <div className="card__info">
-          <p>{selectedItem.description}</p>
-          <h1>Requirements</h1>
-          <p>{selectedItem.requirements.content}</p>
-          <ul>
-            <li>{selectedItem.requirements.items[0]}</li>
-            <li>{selectedItem.requirements.items[1]}</li>
-            <li>{selectedItem.requirements.items[2]}</li>
-            <li>{selectedItem.requirements.items[3]}</li>
-          </ul>
-          <h1>What you will do</h1>
-          <p>{selectedItem.role.content}</p>
-          <ol>
-            <li>{selectedItem.role.items[0]}</li>
-            <li>{selectedItem.role.items[1]}</li>
-            <li>{selectedItem.role.items[2]}</li>
-            <li>{selectedItem.role.items[3]}</li>
-
-          </ol>
-        </div>
-      </div>
-
-      <div className="card__footer">
-       <div className="card__footer__left">
-       <h3>{selectedItem.position}</h3>
-       <p>So Digital Inc.</p>
-       </div>
-       <div className="card__footer__right">
-       <button>Apply Now</button>
-      </div>
       </div>
     </div>
+      <div className="card__footer">
+        <div className="card__footer__left">
+          <h3>{selectedItem.position}</h3>
+          <p>So Digital Inc.</p>
+        </div>
+        <div className="card__footer__right">
+        <a href={selectedItem.apply}>
+            <button>Apply Now</button>
+          </a>
+        </div>
+      </div>
+   </>
   );
 }
 

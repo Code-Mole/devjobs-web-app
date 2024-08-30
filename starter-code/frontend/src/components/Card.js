@@ -1,6 +1,7 @@
 import React from "react";
 import "./Card.css";
 import Data from "../data.json";
+import Search from "./Search";
 
 function Card() {
   const style = {
@@ -16,9 +17,12 @@ function Card() {
   }
 
   return (
+    <>
+    <Search/>
     <div className="card__container">
       {Data.map((item, index) => {
         return (
+         
           <div className="card" key={index}>
             <div style={style}>
               {" "}
@@ -37,6 +41,7 @@ function Card() {
       })}
       <button>Load more</button>
     </div>
+    </>
   );
 }
 

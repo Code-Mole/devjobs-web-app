@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
         </Routes>
       </Router>
-      <button onClick={toggleTheme}>toggle</button>
+      {/* <button onClick={toggleTheme}>toggle</button> */}
     </div>
   );
 }

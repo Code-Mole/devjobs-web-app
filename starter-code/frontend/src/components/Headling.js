@@ -1,4 +1,5 @@
 import "./Headling.css";
+
 import React, { useState } from "react";
 import logoBg from "../assets/desktop/bg-pattern-header.svg";
 import logo from "../assets/desktop/logo.svg";
@@ -36,7 +37,7 @@ function Headling() {
           </div>
         </div>
       </div>
-     
+    
     </div>
   );
 }

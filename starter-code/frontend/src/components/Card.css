@@ -15,7 +15,7 @@
   background-color: var(--color-white);
   border-radius: 5px;
   padding: 1rem;
-  margin-bottom:2rem ;
+  margin-bottom: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -29,17 +29,18 @@
   margin-top: 40px;
 }
 
-/* CARDS COMPONENT */
-
 .cards__container button {
-  width: 55%;
-  padding: 15px;
-  margin: 0 auto 10%;
-  background-color: var(--color-violet);
-  color: var(--color-white);
   border: none;
   outline: none;
   border-radius: 5px;
+}
+
+.card__container button {
+  background-color: var(--color-violet);
+  color: var(--color-white);
+  width: 55%;
+  padding: 15px;
+  margin: 0 auto 10%;
   position: relative;
   left: 100%;
 }
