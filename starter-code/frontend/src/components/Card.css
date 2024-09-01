@@ -11,8 +11,9 @@
   z-index: 1;
 }
 
+
 .card {
-  background-color: var(--color-white);
+  background-color: var(--color-white-background);
   border-radius: 5px;
   padding: 1rem;
   margin-bottom: 2rem;
@@ -22,6 +23,13 @@
 
 .card__info h3 {
   font-size: 20px;
+  color: var(--color-white);
+}
+.card__info span {
+  color: var(--color-dark-grey);
+}
+.card__info p {
+  color: var(--color-dark-grey);
 }
 
 #location {

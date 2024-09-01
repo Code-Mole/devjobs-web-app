@@ -1,20 +1,29 @@
 :root {
-    --color-violet: #5964E0;
-    --color-light-violet: #939bf4;
-    --color-dark-blue: #19202d;
-    --color-midnight: #121721;
-    --color-white: #ffffff;
-    --color-light-grey: #f4f6f8;
-    --color-gray: #9daec2;
-    --color-dark-grey: #6e8098;
-    --color-yellow:#E99210;
-  }
+  --color-violet: #5964e0;
+  --color-light-violet: #939bf4;
+  --color-dark-blue: #19202d;
+  --color-midnight: #121721;
+  --color-white: #19202d;
+  --color-white-background: #ffffff;
+  --color-light-grey: #f4f6f8;
+  --color-gray: #9daec2;
+  --color-dark-grey: #6e8098;
+  --color-yellow: #e99210;
+}
 
-  .App{
-    background-color: var(--color-light-grey);
-  }
+.App {
+  background-color: var(--color-light-grey);
+  overflow: hidden;
+}
 
-  .App__dark__mode{
-    background-color: var(--color-midnight);
-    color: var(--color-white);
-  }
+.App__dark__mode {
+  background-color: var(--color-midnight);
+  color: var(--color-white);
+}
+
+[data-theme="dark"] {
+  --color-light-grey: #121721;
+  --color-white: #ffffff;
+  --color-dark-grey: #6e8098;
+  --color-white-background: #19202d;
+}

@@ -4,6 +4,18 @@
   bottom: 4rem;
   z-index: 2;
 }
+.detailed__container h2 {
+    color: var(--color-white);
+  }
+.detailed__container h3 {
+    color: var(--color-white);
+  }
+.detailed__container p {
+  color: var(--color-white);
+}
+.detailed__container span {
+  color: var(--color-dark-grey);
+}
 
 .card__detailed {
   width: 60%;
@@ -24,7 +36,7 @@
 
 .detailed__container__top {
   width: 100%;
-  background-color: var(--color-white);
+  background-color: var(--color-white-background);
   display: grid;
   grid-template-columns: 15% 85%;
   align-items: center;
@@ -51,6 +63,7 @@
   justify-content: space-between;
   position: relative;
 }
+
 .text__logo a button {
   width: 100%;
   background-color: var(--color-light-grey);
@@ -60,7 +73,7 @@
   right: 10%;
 }
 .detailed__container__botton {
-  background-color: var(--color-white);
+  background-color: var(--color-white-background);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -68,7 +81,7 @@
 }
 
 .card__footer {
-  background-color: var(--color-white);
+  background-color: var(--color-white-background);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px 21.5%;
@@ -77,16 +90,22 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.card__footer h3 {
+  color: var(--color-white);
+}
+.card__footer p {
+  color: var(--color-white);
+}
 .card__footer__right a button {
   background-color: var(--color-violet);
   color: var(--color-white);
   /* width: 40%; */
   padding: 10px;
 }
-.Scoot__text__content button {
-}
 
 .card__info__detailed h3 {
+  color: var(--color-white);
   padding: 20px 0;
 }
 
@@ -101,8 +120,13 @@ ul {
 .card__info__detailed ol,
 ul li {
   padding: 6px 0 6px 15px;
+  color: var(--color-white);
 }
 .card__info__detailed ul,
 ol li {
   padding: 6px 0 6px 15px;
+  color: var(--color-white);
+}
+#link{
+    color: var(--color-dark-grey);
 }

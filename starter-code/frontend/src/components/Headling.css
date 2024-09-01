@@ -50,7 +50,7 @@
   height: 60px;
   padding: 0 20px;
   border-radius: 10px;
-  background-color: var(--color-white);
+  background-color: var(--color-white-background);
   display: grid;
   grid-template-columns: 40% 30% 30%;
   justify-content: center;
@@ -84,6 +84,7 @@
   border: none;
   outline: none;
   margin-left: 10px;
+  background-color: transparent;
 }
 .search__checkbox {
   width: 100%;

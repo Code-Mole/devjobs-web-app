@@ -5,18 +5,19 @@ import DetailPage from "./components/DetailPage.js";
 import { useState } from "react";
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [isDark, setIsDark] = useState(false);
 
   const toggleTheme = () => {
-    alert("Toggle")
-    setTheme(theme === 'light' ? 'dark' : 'light'); // toggle between light and dark theme
-  };
+    setIsDark(!isDark);
+  }
+
+  
   return (
-    <div className={`App ${theme}`}>
+    <div className={`App `} data-theme={isDark ? "dark" : "light"}>
       <Router>
         <Routes>
           <Route path="/details" element={<DetailPage />}></Route>
-          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/" element={<HomePage handleToggle={toggleTheme}/>}></Route>
         </Routes>
       </Router>
       {/* <button onClick={toggleTheme}>toggle</button> */}

@@ -3,10 +3,10 @@ import "./Homepage.css";
 import Headling from "./Headling.js";
 import Cards from "./Cards.js";
 
-function Homepage() {
+function Homepage({handleToggle}) {
   return (
     <div className="homepage__container">
-      <Headling />
+      <Headling handleToggle = {handleToggle}/>
       <Cards />
     </div>
   );

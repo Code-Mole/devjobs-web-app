@@ -25,7 +25,7 @@ function DetailPage(props) {
           <div className="text__logo">
             <div>
               <h3>{selectedItem.company}</h3>
-              <a href={selectedItem.website}>Scoot.com</a>
+              <a id="link" href={selectedItem.website}>Scoot.com</a>
             </div>
             <a href={selectedItem.website}>
               <button>company Site</button>
