@@ -115,3 +115,43 @@
 .search__checkbox button:hover {
   background-color: var(--color-light-violet);
 }
+
+/* SMALLERS SCREENS */
+
+@media screen and (max-width: 1024px) {
+  .search__container {
+    bottom: 25px;
+  }
+  .logo__mode__container {
+    top: -10px;
+  }
+  .logo__mode__container img {
+    width: 90px;
+  }
+  .dark__light__mode__container img {
+    width: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .search__container {
+    bottom: 20px;
+  }
+  .logo__mode__container {
+    top: -30px;
+  }
+  .logo__mode__container img {
+    width: 80px;
+  }
+  .dark__light__mode__container img {
+    width: 15px;
+  }
+  #OnlyOnMobileCheckbox{
+    display: none;
+  }
+  #OnlyOnMobileLocation{
+    display: none;
+  }
+  #fullwidth{
+    width: 100%;
+  }
+}

@@ -1,46 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.css";
-import Data from "../data.json";
+import Data from "../data.js";
 import Search from "./Search";
 
 function Card() {
-  const style = {
-    backgroundColor: "red",
-    height: "40px",
-    width: "40px",
-    borderRadius: "1rem",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    bottom: "35px",
-  }
+  const [clicked, setclicked] = useState(true);
+  // const handleClick = () => {
+  //   console.log("clicked");
+
+  // }
 
   return (
     <>
-    <Search/>
-    <div className="card__container">
-      {Data.map((item, index) => {
-        return (
-         
-          <div className="card" key={index}>
-            <div style={style}>
-              {" "}
-              {/* {item.logoBackground} */}
-              <img src={item.logo} alt="logo" />
+      <Search />
+      <div className="card__container">
+        {Data.map((item, index) => {
+          return (
+            <div className="card" key={index}>
+              <div
+                style={{
+                  backgroundColor: item.logoBackground,
+                  borderRadius: "1rem",
+                  width: "40px",
+                  height: "40px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
+                  bottom: "35px",
+                }}
+              >
+                {item.logo}
+              </div>
+              <div className="card__info">
+                <span>{item.postedAt} . </span>
+                <span>{item.contract}</span>
+                <h3>{item.position}</h3>
+                <p>{item.company}</p>
+                <p id="location">{item.location}</p>
+              </div>
             </div>
-            <div className="card__info">
-              <span>{item.postedAt} . </span>
-              <span>{item.contract}</span>
-              <h3>{item.position}</h3>
-              <p>{item.company}</p>
-              <p id="location">{item.location}</p>
-            </div>
-          </div>
-        );
-      })}
-      <button>Load more</button>
-    </div>
+          );
+        })}
+        <br />
+        <button>Load more</button>
+      </div>
     </>
   );
 }

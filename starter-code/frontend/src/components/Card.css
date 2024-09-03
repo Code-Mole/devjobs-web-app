@@ -50,8 +50,28 @@
   padding: 15px;
   margin: 0 auto 10%;
   position: relative;
-  left: 100%;
+  left: 0;
 }
 .cards__container button:hover {
   background-color: var(--color-light-violet);
 }
+
+@media screen and (max-width:1024px) {
+  .card__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card__container button{
+    width: 60%;
+    left: 50%;
+  }
+}
+@media screen and (max-width:768px) {
+  .card__container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card__container button{
+    width: 40%;
+    left: 0;
+  }
+}
+
