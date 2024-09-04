@@ -52,7 +52,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
- 
 }
 
 .text__logo {
@@ -68,9 +67,17 @@
   width: 100%;
   background-color: var(--color-light-grey);
   color: var(--color-violet);
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
   padding: 15px;
+  margin: 0 auto 10%;
   position: relative;
-  right: 10%;
+  left: 0;
+}
+.text__logo a button:hover {
+  background-color: var(--color-light-violet);
 }
 .detailed__container__botton {
   background-color: var(--color-white-background);
@@ -78,6 +85,16 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 30px;
   margin: 20px 0;
+}
+
+.Scoot__text__content a button {
+  background-color: var(--color-violet);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  margin: 0 0 10% 50px;
 }
 
 .card__footer {
@@ -100,8 +117,20 @@
 .card__footer__right a button {
   background-color: var(--color-violet);
   color: var(--color-white);
-  /* width: 40%; */
   padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--color-violet);
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto 10%;
+  position: relative;
+  left: 0;
+}
+.card__footer__right a button:hover {
+  background-color: var(--color-light-violet);
 }
 
 .card__info__detailed h3 {
@@ -149,18 +178,66 @@ ol li {
     width: 90%;
   }
   .detailed__container__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .detailed__img__container {
+    width: 80px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+    bottom: 20px;
+    right: 10px;
+  }
+  .text__logo {
+    margin-left: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .text__logo a button {
+    width: 150%;
+    margin-top: 40px;
+    position: relative;
+    left: -40px;
+  }
+  .text__logo a button:hover {
+    background-color: var(--color-light-violet);
+  }
+  .card__info__detailed {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .card__footer {
+    padding: 10px 0;
   }
   .card__footer__left {
     display: none;
   }
   .card__footer__right {
-    width: 100%;
+    width: 60%;
+    margin: 0 auto;
   }
   .card__footer__right a button {
     width: 100%;
   }
   .Scoot__text__content a button {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    background-color: var(--color-violet);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5rem auto 10%;
+    position: relative;
+    left: 0;
   }
 }

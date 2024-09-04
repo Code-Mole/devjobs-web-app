@@ -1,8 +1,16 @@
 import React from "react";
 import "./DetailPage.css";
 import Data from "../data.js";
+import Headling from "./Headling.js";
+import { useNavigate, } from "react-router-dom";
 
 function DetailPage(props) {
+  const navigate = useNavigate();
+
+
+  const handlegoBack = () => {
+    navigate(-1);
+  };
   const item = Data.map((obj) => {
     if (obj.id === props.id) {
       return obj;
@@ -13,12 +21,19 @@ function DetailPage(props) {
   }
 
   const selectedItem = item[0];
+
   return (
     <>
-      <div className="detailed__container">
+      <Headling />
+      <div onClick={handlegoBack} className="detailed__container">
         <div className="card__detailed">
           <div className="detailed__container__top">
-            <div className="detailed__img__container" style={{backgroundColor: selectedItem.logoBackground}}>{selectedItem.logo}</div>
+            <div
+              className="detailed__img__container"
+              style={{ backgroundColor: selectedItem.logoBackground }}
+            >
+              {selectedItem.logo}
+            </div>
 
             <div className="text__logo">
               <div>
