@@ -14,7 +14,7 @@ function Headling({ handleToggle }) {
   const handleToggleClick = () => {
     setToggle(!toggle);
     handleToggle();
-  }
+  };
   return (
     <div>
       <div className="heading__container">
@@ -28,14 +28,14 @@ function Headling({ handleToggle }) {
           <div className="dark__light__mode__container">
             <img src={sun} alt="sun" />
             {toggle ? (
-              <div onClick={ handleToggleClick} className="toggle__icon">
+              <div onClick={handleToggleClick} className="toggle__icon">
                 {" "}
                 <ToggleOnIcon handleToggle={handleToggle} />
               </div>
             ) : (
               <div onClick={handleToggleClick} className="toggle__icon">
                 {" "}
-                <ToggleOffIcon  />
+                <ToggleOffIcon />
               </div>
             )}
             <img src={moon} alt="moon" />

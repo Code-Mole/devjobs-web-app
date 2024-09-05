@@ -45,7 +45,7 @@ function Search({ onSearchChange, handleLocationSearch }) {
           <div id="searchIcon__background">
             <svg
               id="search__svg"
-              width="20"
+              width="30"
               height="30"
               xmlns="http://www.w3.org/2000/svg"
             >
