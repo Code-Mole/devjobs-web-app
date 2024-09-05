@@ -1,3 +1,4 @@
+/* CARD COMPONENT STYLES */
 .card__container {
   width: 80%;
   margin: 5% auto;
@@ -23,6 +24,9 @@
 .card__info h3 {
   font-size: 20px;
   color: var(--color-white);
+}
+.card__info h3:hover {
+  color: var(--color-dark-grey);
 }
 .card__info span {
   color: var(--color-dark-grey);
@@ -59,6 +63,7 @@
   z-index: -10;
 }
 
+/* TABLETS SCREENS STYLES */
 @media screen and (max-width: 1024px) {
   .card__container {
     grid-template-columns: repeat(2, 1fr);
@@ -68,6 +73,8 @@
     left: 50%;
   }
 }
+
+/* MOBILE SCREENS STYLES */
 @media screen and (max-width: 768px) {
   .card__container {
     grid-template-columns: repeat(1, 1fr);

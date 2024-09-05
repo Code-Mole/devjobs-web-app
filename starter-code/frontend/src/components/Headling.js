@@ -1,5 +1,4 @@
 import "./Headling.css";
-
 import React, { useState } from "react";
 import logoBg from "../assets/desktop/bg-pattern-header.svg";
 import logo from "../assets/desktop/logo.svg";
@@ -9,7 +8,9 @@ import ToggleOnIcon from "@mui/icons-material/ToggleOn";
 import ToggleOffIcon from "@mui/icons-material/ToggleOff";
 
 function Headling({ handleToggle }) {
+  // STATES
   const [toggle, setToggle] = useState(false);
+  // FUNCTION FOR HANDLING TOGGLE
   const handleToggleClick = () => {
     setToggle(!toggle);
     handleToggle();

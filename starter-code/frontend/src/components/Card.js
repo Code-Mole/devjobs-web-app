@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Card.css";
 import Data from "../data.js";
 import Search from "./Search";
 import { useNavigate } from "react-router-dom";
 
-function Card({ children, onClose, handleBlurActive }) {
+function Card({ children, onClose }) {
+  // STATES
   const [searchQuery, setSearchQuery] = useState("");
   const [searchLocation, setSearchLocation] = useState("");
-  // const [isBlurred, setIsBlurred] = useState(false);
+  // ROUTER
   const navigate = useNavigate();
 
+  // A FUNCTION FOR ROUTING CARD AND DETAILED CARD
   const handleCardClick = (id) => {
     if (id === 1) {
       console.log("Card with ID 1 clicked");
@@ -18,33 +20,26 @@ function Card({ children, onClose, handleBlurActive }) {
       console.log("Card with ID", id, "clicked but navigation is disabled");
     }
   };
+
+  // FUNCTIONS PASS TO SEARCH COMPONENT
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
-    // console.log(
-    //   Data.filter((filt) => filt.company.toLowerCase().includes(searchQuery))
-    // );
   };
 
   const handleLocationSearch = (e) => {
     setSearchLocation(e.target.value);
-    console.log(
-      Data.filter((f) => f.location.toLowerCase().includes(searchLocation))
-    );
   };
 
-  
+  // SEARCH ALGORITHM IMPLEMENTATION
+  const filteredData = Data.filter((filt) => {
+    const matchLocation = filt.location.toLowerCase().includes(searchLocation);
+    const matchesCompanyTitle =
+      filt.company.toLowerCase().includes(searchQuery) ||
+      filt.position.toLowerCase().includes(searchQuery);
 
-  // useEffect(() => {
-  //   if (isBlurred) {
-  //     document.body.classList.add("blurred");
-  //   } else {
-  //     document.body.classList.remove("blurred");
-  //   }
-  // }, [isBlurred]);
+    return matchLocation && matchesCompanyTitle;
+  });
 
-  // const handleBlur = () => {
-  //   setIsBlurred(!isBlurred);
-  // };
 
   return (
     <>
@@ -53,11 +48,7 @@ function Card({ children, onClose, handleBlurActive }) {
         handleLocationSearch={handleLocationSearch}
       />
       <div className="card__container">
-        {Data.filter(
-          (filt) =>
-            filt.company.toLowerCase().includes(searchQuery) ||
-            filt.position.toLowerCase().includes(searchQuery)
-        ).map((item, index) => {
+        {filteredData.map((item, index) => {
           return (
             <div
               className="card"

@@ -2,9 +2,12 @@ import React from "react";
 import "./Headling.css";
 import LocationIcon from "../assets/desktop/icon-location.svg";
 
-function PopUp({ handleVisibility }) {
+function PopUp({ handleVisibility, handleLocationSearch }) {
   return (
-    <div className="search__popup__container" onClick={()=>handleVisibility()}>
+    <div
+      className="search__popup__container"
+      onClick={() => handleVisibility()}
+    >
       <div
         onClick={(e) => e.stopPropagation()}
         onClose={handleVisibility}
@@ -16,7 +19,11 @@ function PopUp({ handleVisibility }) {
             alt="location icon"
             className="search__icon"
           />
-          <input type="text" placeholder="Filter by location…" />
+          <input
+            type="text"
+            placeholder="Filter by location…"
+            onChange={handleLocationSearch}
+          />
         </div>
         <div id="hideBorder" className="search__input search__checkbox">
           <input type="checkbox" />

@@ -5,12 +5,15 @@ import Headling from "./Headling.js";
 import { useNavigate, } from "react-router-dom";
 
 function DetailPage(props) {
+  // ROUTOR
   const navigate = useNavigate();
 
-
+// ROUTE BACK TO CARD PAGE
   const handlegoBack = () => {
     navigate(-1);
   };
+
+  // GET DATA FROM DATA.JS
   const item = Data.map((obj) => {
     if (obj.id === props.id) {
       return obj;

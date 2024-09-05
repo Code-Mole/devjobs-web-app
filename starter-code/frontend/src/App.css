@@ -16,11 +16,7 @@
   overflow: hidden;
 }
 
-.App__dark__mode {
-  background-color: var(--color-midnight);
-  color: var(--color-white);
-}
-
+/* DARK MODE IMPLEMENTATION */
 [data-theme="dark"] {
   --color-light-grey: #121721;
   --color-white: #ffffff;

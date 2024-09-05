@@ -1,4 +1,4 @@
-/* HEADING COMPONENT */
+/* HEADLING COMPONENT  STYLES*/
 .heading__container {
   width: 100%;
   position: relative;
@@ -43,7 +43,7 @@
   z-index: 1;
 }
 
-/* SEARCH COMPONENT */
+/* SEARCH COMPONENT STYLES */
 
 .search__container {
   width: 80%;
@@ -125,7 +125,7 @@
   background-color: var(--color-light-violet);
 }
 
-/* SMALLERS SCREENS */
+/* TABLETS SCREENS STYLES */
 
 @media screen and (max-width: 1024px) {
   .search__container {
@@ -152,6 +152,9 @@
     height: 100px;
   }
 }
+
+
+/* MOBILE SCREENS STYLES */
 @media screen and (max-width: 768px) {
   .search__container {
     width: 80%;

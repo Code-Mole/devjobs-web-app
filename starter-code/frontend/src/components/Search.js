@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import "./Headling.css";
-import Data from "../data.js";
 import SearchIcon from "../assets/desktop/icon-search.svg";
 import LocationIcon from "../assets/desktop/icon-location.svg";
 import FilterIcon from "../assets/mobile/icon-filter.svg";
 import PopUp from "./PopUp.js";
 
-function Search({ onSearch, onSearchChange, handleLocationSearch }) {
+function Search({ onSearchChange, handleLocationSearch }) {
+  // STATES
   const [filter, setFilter] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  const handleFilterClick = () => {
+ 
+// FUNCTION FOR HANDLING THE POP UP COMPONENT
+  const handleVisibility = () => {
+    setIsPopupVisible(!isPopupVisible);
     setFilter(!filter);
   };
 
-  const handleVisibility = () => {
-    setIsPopupVisible(!isPopupVisible);
-  };
+
 
   return (
     <>
@@ -29,7 +30,6 @@ function Search({ onSearch, onSearchChange, handleLocationSearch }) {
             className="search__icon"
           />
           <input
-            // value={search}
             type="text"
             placeholder="Filter by title, companies, expertise..."
             onChange={onSearchChange}
@@ -37,7 +37,7 @@ function Search({ onSearch, onSearchChange, handleLocationSearch }) {
         </div>
         <div className="search__icons__containtar">
           <img
-            onClick={handleFilterClick}
+            onClick={handleVisibility}
             className="search__icon"
             src={FilterIcon}
             alt="filter icon"
@@ -59,7 +59,11 @@ function Search({ onSearch, onSearchChange, handleLocationSearch }) {
         </div>
 
         {filter ? (
-          <PopUp handleVisibility={handleVisibility} />
+          <PopUp
+            handleLocationSearch={handleLocationSearch}
+            handleVisibility={handleVisibility}
+        
+          />
         ) : (
           <>
             <div id="OnlyOnMobileLocation" className="search__input">
@@ -80,7 +84,9 @@ function Search({ onSearch, onSearchChange, handleLocationSearch }) {
             >
               <div id="search__checkbox__flex">
                 <input type="checkbox" />
-                <h4>Full Time <span>Only</span></h4>
+                <h4>
+                  Full Time <span>Only</span>
+                </h4>
               </div>
               <button>Search</button>
             </div>
