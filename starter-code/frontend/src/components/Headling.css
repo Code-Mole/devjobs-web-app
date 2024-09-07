@@ -3,6 +3,11 @@
   width: 100%;
   position: relative;
 }
+.logo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 .logo__container {
   cursor: pointer;
 }

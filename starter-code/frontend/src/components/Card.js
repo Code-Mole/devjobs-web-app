@@ -32,14 +32,15 @@ function Card({ children, onClose }) {
 
   // SEARCH ALGORITHM IMPLEMENTATION
   const filteredData = Data.filter((filt) => {
-    const matchLocation = filt.location.toLowerCase().includes(searchLocation);
+    const matchLocation = filt.location
+      .toLowerCase()
+      .includes(searchLocation.toLowerCase());
     const matchesCompanyTitle =
-      filt.company.toLowerCase().includes(searchQuery) ||
-      filt.position.toLowerCase().includes(searchQuery);
+      filt.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      filt.position.toLowerCase().includes(searchQuery.toLowerCase());
 
     return matchLocation && matchesCompanyTitle;
   });
-
 
   return (
     <>
