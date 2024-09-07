@@ -4,6 +4,7 @@ import HomePage from "./components/Homepage.js";
 import DetailPage from "./components/DetailPage.js";
 import { useState } from "react";
 import useLocalStorage from "use-local-storage";
+import Headling from "./components/Headling.js";
 
 function App({ children, onClose }) {
   const [isDark, setIsDark] = useLocalStorage("isDark", false);
@@ -14,12 +15,13 @@ function App({ children, onClose }) {
 
   return (
     <div className={`App `} data-theme={isDark ? "dark" : "light"}>
+      <Headling toggleTheme={toggleTheme}/>
       <Router>
         <Routes>
           <Route path="/details" element={<DetailPage id={1} />}></Route>
           <Route
             path="/"
-            element={<HomePage handleToggle={toggleTheme} />}
+            element={<HomePage handleToggleTheme={toggleTheme} />}
           ></Route>
         </Routes>
       </Router>

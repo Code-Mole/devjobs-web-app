@@ -1,10 +1,9 @@
 import React from "react";
 import "./DetailPage.css";
 import Data from "../data.js";
-import Headling from "./Headling.js";
 import { useNavigate, } from "react-router-dom";
 
-function DetailPage(props) {
+function DetailPage(props, handleToggleTheme) {
   // ROUTOR
   const navigate = useNavigate();
 
@@ -27,7 +26,6 @@ function DetailPage(props) {
 
   return (
     <>
-      <Headling />
       <div onClick={handlegoBack} className="detailed__container">
         <div className="card__detailed">
           <div className="detailed__container__top">

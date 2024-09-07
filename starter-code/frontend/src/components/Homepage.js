@@ -1,11 +1,10 @@
 import React from "react";
-import Headling from "./Headling.js";
 import Card from "./Card.js";
 
-function Homepage({ handleToggle }) {
+function Homepage() {
   return (
     <div className="homepage__container">
-      <Headling handleToggle={handleToggle} />
+    
       <Card id={1} />
     </div>
   );

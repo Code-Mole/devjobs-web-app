@@ -7,13 +7,13 @@ import moon from "../assets/desktop/icon-moon.svg";
 import ToggleOnIcon from "@mui/icons-material/ToggleOn";
 import ToggleOffIcon from "@mui/icons-material/ToggleOff";
 
-function Headling({ handleToggle }) {
+function Headling({ toggleTheme }) {
   // STATES
   const [toggle, setToggle] = useState(false);
   // FUNCTION FOR HANDLING TOGGLE
   const handleToggleClick = () => {
     setToggle(!toggle);
-    handleToggle();
+    toggleTheme();
   };
   return (
     <div>
@@ -30,7 +30,7 @@ function Headling({ handleToggle }) {
             {toggle ? (
               <div onClick={handleToggleClick} className="toggle__icon">
                 {" "}
-                <ToggleOnIcon handleToggle={handleToggle} />
+                <ToggleOnIcon />
               </div>
             ) : (
               <div onClick={handleToggleClick} className="toggle__icon">
