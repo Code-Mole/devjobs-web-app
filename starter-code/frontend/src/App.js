@@ -7,7 +7,7 @@ import useLocalStorage from "use-local-storage";
 import Headling from "./components/Headling.js";
 
 function App({ children, onClose }) {
-  const [isDark, setIsDark] = useLocalStorage("isDark", false);
+  const [isDark, setIsDark] = useLocalStorage("isDark", true);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
@@ -15,7 +15,7 @@ function App({ children, onClose }) {
 
   return (
     <div className={`App `} data-theme={isDark ? "dark" : "light"}>
-      <Headling toggleTheme={toggleTheme}/>
+      <Headling toggleTheme={toggleTheme} />
       <Router>
         <Routes>
           <Route path="/details" element={<DetailPage id={1} />}></Route>

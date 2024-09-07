@@ -9,7 +9,7 @@ import ToggleOffIcon from "@mui/icons-material/ToggleOff";
 
 function Headling({ toggleTheme }) {
   // STATES
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   // FUNCTION FOR HANDLING TOGGLE
   const handleToggleClick = () => {
     setToggle(!toggle);
