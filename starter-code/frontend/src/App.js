@@ -7,7 +7,7 @@ import useLocalStorage from "use-local-storage";
 import Headling from "./components/Headling.js";
 
 function App({ children, onClose }) {
-  const [isDark, setIsDark] = useLocalStorage("isDark", true);
+  const [isDark, setIsDark] = useLocalStorage("isDark", false);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
