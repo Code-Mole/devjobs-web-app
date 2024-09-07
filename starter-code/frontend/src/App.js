@@ -14,7 +14,7 @@ function App({ children, onClose }) {
   };
 
   return (
-    <div className={`App `} data-theme={isDark ? "dark" : "light"}>
+    <div className="App" data-theme={isDark ? "dark" : "light"}>
       <Headling toggleTheme={toggleTheme} />
       <Router>
         <Routes>

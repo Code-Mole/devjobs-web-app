@@ -16,30 +16,28 @@ function Headling({ toggleTheme }) {
     toggleTheme();
   };
   return (
-    <div>
-      <div className="heading__container">
-        <div className="logo">
-          <img id="headingBgImg" src={logoBg} alt="bgimage" />
+    <div className="heading__container">
+      <div className="logo">
+        <img id="headingBgImg" src={logoBg} alt="bgimage" />
+      </div>
+      <div className="logo__mode__container">
+        <div className="logo__container">
+          <img src={logo} alt="logoimage" />
         </div>
-        <div className="logo__mode__container">
-          <div className="logo__container">
-            <img src={logo} alt="logoimage" />
-          </div>
-          <div className="dark__light__mode__container">
-            <img src={sun} alt="sun" />
-            {toggle ? (
-              <div onClick={handleToggleClick} className="toggle__icon">
-                {" "}
-                <ToggleOnIcon />
-              </div>
-            ) : (
-              <div onClick={handleToggleClick} className="toggle__icon">
-                {" "}
-                <ToggleOffIcon />
-              </div>
-            )}
-            <img src={moon} alt="moon" />
-          </div>
+        <div className="dark__light__mode__container">
+          <img src={sun} alt="sun" />
+          {toggle ? (
+            <div onClick={handleToggleClick} className="toggle__icon">
+              {" "}
+              <ToggleOnIcon />
+            </div>
+          ) : (
+            <div onClick={handleToggleClick} className="toggle__icon">
+              {" "}
+              <ToggleOffIcon />
+            </div>
+          )}
+          <img src={moon} alt="moon" />
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   position: relative;
-  top: 200%;
+  top: 50px;
   right: 0;
   background-color: var(--color-light-grey);
   z-index: 1;
@@ -39,8 +39,6 @@
   color: var(--color-violet);
   margin-top: 40px;
 }
-
-
 
 .card__container button {
   border: none;
