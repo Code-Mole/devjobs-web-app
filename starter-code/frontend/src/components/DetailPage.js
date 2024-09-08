@@ -8,9 +8,7 @@ function DetailPage() {
   const navigate = useNavigate();
   const { id } = useParams();
   
-  const test = ()=>{
-    console.log("ID from URL:", id);
-  }
+ 
 
   // ROUTE BACK TO CARD PAGE
   const handlegoBack = () => {
@@ -29,7 +27,6 @@ function DetailPage() {
 
   return (
     <>
-    <button onClick={test}></button>
       <div onClick={handlegoBack} className="detailed__container">
         <div className="card__detailed">
           <div className="detailed__container__top">
