@@ -1,31 +1,35 @@
 import React from "react";
 import "./DetailPage.css";
 import Data from "../data.js";
-import { useNavigate, } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 
-function DetailPage(props, handleToggleTheme) {
+function DetailPage() {
   // ROUTOR
   const navigate = useNavigate();
+  const { id } = useParams();
+  
+  const test = ()=>{
+    console.log("ID from URL:", id);
+  }
 
-// ROUTE BACK TO CARD PAGE
+  // ROUTE BACK TO CARD PAGE
   const handlegoBack = () => {
     navigate(-1);
   };
 
-  // GET DATA FROM DATA.JS
-  const item = Data.map((obj) => {
-    if (obj.id === props.id) {
-      return obj;
-    }
-  });
-  if (!item[0]) {
+  // GET DATA FROM DATA.JS AND MARCH IT TO THE CARD
+ 
+  const selectedItem = Data.find((obj) => obj.id === Number(id));
+
+  if (!selectedItem) {
     return <div>Item not found</div>;
   }
 
-  const selectedItem = item[0];
+ 
 
   return (
     <>
+    <button onClick={test}></button>
       <div onClick={handlegoBack} className="detailed__container">
         <div className="card__detailed">
           <div className="detailed__container__top">
@@ -66,18 +70,16 @@ function DetailPage(props, handleToggleTheme) {
               <h3>Requirements</h3>
               <p>{selectedItem.requirements.content}</p>
               <ul>
-                <li>{selectedItem.requirements.items[0]}</li>
-                <li>{selectedItem.requirements.items[1]}</li>
-                <li>{selectedItem.requirements.items[2]}</li>
-                <li>{selectedItem.requirements.items[3]}</li>
+              {selectedItem.requirements.items.map((req, index) => (
+          <li key={index}>{req}</li>
+        ))}
               </ul>
               <h3>What you will do</h3>
               <p>{selectedItem.role.content}</p>
               <ol>
-                <li>{selectedItem.role.items[0]}</li>
-                <li>{selectedItem.role.items[1]}</li>
-                <li>{selectedItem.role.items[2]}</li>
-                <li>{selectedItem.role.items[3]}</li>
+              {selectedItem.role.items.map((role, index) => (
+          <li key={index}>{role}</li>
+        ))}
               </ol>
             </div>
           </div>

@@ -73,8 +73,6 @@ Open your browser and navigate to http://localhost:3000.
   | | | | ├── DetailPage.js
   | | | | ├── Headling.css
   | | | | ├── Headling.js
-  | | | | ├── HomePage.css
-  | | | | ├── HomePage.js
   | | | | ├── Search.js
   | | | | ├── Logos.js  
   | | | ├── App.css

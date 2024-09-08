@@ -4,21 +4,19 @@ import Data from "../data.js";
 import Search from "./Search";
 import { useNavigate } from "react-router-dom";
 
-function Card({ children, onClose }) {
+function Card() {
   // STATES
   const [searchQuery, setSearchQuery] = useState("");
   const [searchLocation, setSearchLocation] = useState("");
+  const [visibleCount, setVisibleCount] = useState(9); 
+
   // ROUTER
   const navigate = useNavigate();
 
   // A FUNCTION FOR ROUTING CARD AND DETAILED CARD
   const handleCardClick = (id) => {
-    if (id === 1) {
-      console.log("Card with ID 1 clicked");
-      navigate(`/details`);
-    } else {
-      console.log("Card with ID", id, "clicked but navigation is disabled");
-    }
+    console.log("Navigating to details for ID:", id);
+    navigate(`/details/${id}`); 
   };
 
   // FUNCTIONS PASS TO SEARCH COMPONENT
@@ -42,6 +40,11 @@ function Card({ children, onClose }) {
     return matchLocation && matchesCompanyTitle;
   });
 
+    // Handle Load More Functionality
+    const handleLoadMore = () => {
+      setVisibleCount((prevCount) => prevCount + 3); 
+    };
+
   return (
     <>
       <Search
@@ -49,12 +52,12 @@ function Card({ children, onClose }) {
         handleLocationSearch={handleLocationSearch}
       />
       <div className="card__container">
-        {filteredData.map((item, index) => {
+        {filteredData.slice(0, visibleCount).map((item, index) => {
           return (
             <div
               className="card"
               key={index}
-              onClick={() => handleCardClick((item.id = 1))}
+              onClick={() => handleCardClick(item.id)}
             >
               <div
                 style={{
@@ -83,7 +86,11 @@ function Card({ children, onClose }) {
           );
         })}
         <br />
-        <button>Load more</button>
+        {visibleCount < filteredData.length && (
+          <button onClick={handleLoadMore} >
+            Load more
+          </button>
+        )}
       </div>
     </>
   );
