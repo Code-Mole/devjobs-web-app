@@ -1,14 +1,12 @@
 import React from "react";
 import "./DetailPage.css";
 import Data from "../data.js";
-import { useNavigate,useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function DetailPage() {
   // ROUTOR
   const navigate = useNavigate();
   const { id } = useParams();
-  
- 
 
   // ROUTE BACK TO CARD PAGE
   const handlegoBack = () => {
@@ -16,14 +14,12 @@ function DetailPage() {
   };
 
   // GET DATA FROM DATA.JS AND MARCH IT TO THE CARD
- 
+
   const selectedItem = Data.find((obj) => obj.id === Number(id));
 
   if (!selectedItem) {
     return <div>Item not found</div>;
   }
-
- 
 
   return (
     <>
@@ -41,7 +37,7 @@ function DetailPage() {
               <div>
                 <h3>{selectedItem.company}</h3>
                 <a id="link" href={selectedItem.website}>
-                  Scoot.com
+                  {selectedItem.company}.com
                 </a>
               </div>
               <a href={selectedItem.website}>
@@ -67,16 +63,16 @@ function DetailPage() {
               <h3>Requirements</h3>
               <p>{selectedItem.requirements.content}</p>
               <ul>
-              {selectedItem.requirements.items.map((req, index) => (
-          <li key={index}>{req}</li>
-        ))}
+                {selectedItem.requirements.items.map((req, index) => (
+                  <li key={index}>{req}</li>
+                ))}
               </ul>
               <h3>What you will do</h3>
               <p>{selectedItem.role.content}</p>
               <ol>
-              {selectedItem.role.items.map((role, index) => (
-          <li key={index}>{role}</li>
-        ))}
+                {selectedItem.role.items.map((role, index) => (
+                  <li key={index}>{role}</li>
+                ))}
               </ol>
             </div>
           </div>
